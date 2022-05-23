@@ -1,2 +1,2 @@
-# puyo-clone
-A puyo-puyo clone
+# Slime Season
+A puyo-puyo inspired game
