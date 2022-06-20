@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Puyo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/GameControl.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 48, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 96 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 3 )
+puyo_scene = ExtResource( 1 )
+spawn_point = NodePath("PuyoSpawn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 88, 96 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="PuyoSpawn" type="Node2D" parent="."]
+position = Vector2( 40, -8 )
+
+[node name="GameLimits" type="Node2D" parent="."]
+
+[node name="Ceiling" type="Area2D" parent="GameLimits"]
+position = Vector2( 48, -8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameLimits/Ceiling"]
+shape = SubResource( 1 )
+
+[node name="Floor" type="Area2D" parent="GameLimits"]
+position = Vector2( 48, 200 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameLimits/Floor"]
+shape = SubResource( 1 )
+
+[node name="LeftWall" type="Area2D" parent="GameLimits"]
+position = Vector2( -8, 96 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameLimits/LeftWall"]
+shape = SubResource( 2 )
+
+[node name="RightWall" type="Area2D" parent="GameLimits"]
+position = Vector2( 104, 96 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameLimits/RightWall"]
+shape = SubResource( 2 )

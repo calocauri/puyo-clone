@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/Puyo.gd" type="Script" id=1]
+[ext_resource path="res://puyo-blue.png" type="Texture" id=2]
+[ext_resource path="res://scripts/PuyoSprite.gd" type="Script" id=3]
+[ext_resource path="res://puyo-green.png" type="Texture" id=4]
+[ext_resource path="res://puyo-pink.png" type="Texture" id=5]
+[ext_resource path="res://puyo-yellow.png" type="Texture" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.9, 5.9 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.9, 2.9 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 3.9, 5.9 )
+
+[node name="Puyo" type="Area2D" groups=["Puyo"]]
+position = Vector2( -1, -5 )
+collision_mask = 0
+script = ExtResource( 1 )
+fall_speed = 20.0
+full_speed = 100.0
+puyo_sprite = NodePath("Sprite")
+sensor_down_close = NodePath("Sensor Down Close")
+sensor_down_far = NodePath("Sensor Down Far")
+sensor_left = NodePath("Sensor Left")
+sensor_right = NodePath("Sensor Right")
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+blue_sprite = ExtResource( 2 )
+pink_sprite = ExtResource( 5 )
+yellow_sprite = ExtResource( 6 )
+green_sprite = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2 )
+shape = SubResource( 1 )
+
+[node name="Sensor Down Close" type="Area2D" parent="."]
+position = Vector2( 0, 11 )
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor Down Close"]
+shape = SubResource( 2 )
+
+[node name="Sensor Down Far" type="Area2D" parent="."]
+position = Vector2( 0, 17 )
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor Down Far"]
+shape = SubResource( 2 )
+
+[node name="Sensor Left" type="Area2D" parent="."]
+position = Vector2( -12, 2 )
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor Left"]
+shape = SubResource( 3 )
+
+[node name="Sensor Right" type="Area2D" parent="."]
+position = Vector2( 12, 2 )
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sensor Right"]
+shape = SubResource( 3 )

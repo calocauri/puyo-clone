@@ -1,0 +1,205 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Resource",
+"class": "ArrayVariable",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.shared_variables/Array/ArrayVariable.gd"
+}, {
+"base": "Resource",
+"class": "BoolVariable",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.shared_variables/BoolVariable.gd"
+}, {
+"base": "CheckBox",
+"class": "BoolVariableCheckbox",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/bool_checkbox/BoolVariableCheckbox.gd"
+}, {
+"base": "Resource",
+"class": "CategoryOptionalData",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/custom_resources/CategoryOptionalData.gd"
+}, {
+"base": "Resource",
+"class": "CategoryOptionalDataDict",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/custom_resources/CategoryOptionalDataDict.gd"
+}, {
+"base": "VBoxContainer",
+"class": "CategoryOptions",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/CategoryOptionsLine.gd"
+}, {
+"base": "Node",
+"class": "Collapsible",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/Collapsible.gd"
+}, {
+"base": "Resource",
+"class": "DictionaryVariable",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.shared_variables/DictionaryVariable.gd"
+}, {
+"base": "HBoxContainer",
+"class": "FilePathLineEdit",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/path_line_edit/FilePathLineEdit.gd"
+}, {
+"base": "Reference",
+"class": "GameControl",
+"language": "GDScript",
+"path": "res://scripts/GameControl.gd"
+}, {
+"base": "",
+"class": "GitAPI",
+"language": "NativeScript",
+"path": "res://addons/godot-git-plugin/git_api.gdns"
+}, {
+"base": "MarkdownDocsExporter",
+"class": "HugoMarkdownDocsExporter",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/godot_docs_scripts/HugoMarkdownDocsExporter.gd"
+}, {
+"base": "Reference",
+"class": "JsonIO",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/godot_docs_scripts/JsonIO.gd"
+}, {
+"base": "JsonIO",
+"class": "MarkdownDocsExporter",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/godot_docs_scripts/MarkdownDocsExporter.gd"
+}, {
+"base": "LineEdit",
+"class": "PathLineEdit",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/path_line_edit/PathLineEdit.gd"
+}, {
+"base": "Reference",
+"class": "Puyo",
+"language": "GDScript",
+"path": "res://scripts/Puyo.gd"
+}, {
+"base": "JsonIO",
+"class": "ReferenceFormatter",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/godot_docs_scripts/ReferenceFormatter.gd"
+}, {
+"base": "TextEdit",
+"class": "ResizableTextEdit",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/resizable_text_edit/ResizableTextEdit.gd"
+}, {
+"base": "Resource",
+"class": "StringArrayVariable",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.shared_variables/Array/StringArrayVariable.gd"
+}, {
+"base": "Resource",
+"class": "StringVariable",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.shared_variables/StringVariable.gd"
+}, {
+"base": "Resource",
+"class": "StringVariableArray",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.shared_variables/StringVariableArray.gd"
+}, {
+"base": "LineEdit",
+"class": "StringVariableLineEdit",
+"language": "GDScript",
+"path": "res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/string_line_edit/StringVariableLineEdit.gd"
+} ]
+_global_script_class_icons={
+"ArrayVariable": "",
+"BoolVariable": "",
+"BoolVariableCheckbox": "",
+"CategoryOptionalData": "",
+"CategoryOptionalDataDict": "",
+"CategoryOptions": "",
+"Collapsible": "",
+"DictionaryVariable": "",
+"FilePathLineEdit": "",
+"GameControl": "",
+"GitAPI": "",
+"HugoMarkdownDocsExporter": "",
+"JsonIO": "",
+"MarkdownDocsExporter": "",
+"PathLineEdit": "",
+"Puyo": "",
+"ReferenceFormatter": "",
+"ResizableTextEdit": "",
+"StringArrayVariable": "",
+"StringVariable": "",
+"StringVariableArray": "",
+"StringVariableLineEdit": ""
+}
+
+[application]
+
+config/name="puyo-clone"
+run/main_scene="res://Game.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=400
+window/size/height=450
+window/size/resizable=false
+
+[gdnative]
+
+singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+
+[input]
+
+move__right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+rotate_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":69,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+rotate_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+accelerate={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+instant={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+2d/snapping/use_gpu_pixel_snap=true
+environment/default_environment="res://default_env.tres"
